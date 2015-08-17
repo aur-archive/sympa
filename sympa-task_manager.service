@@ -1,0 +1,10 @@
+[Unit]
+Description=Scheduled tasks processing for Sympa
+BindTo=sympa.service
+ 
+[Service]
+User=sympa
+Group=sympa
+Type=forking
+PIDFile=/var/lib/sympa/task_manager.pid
+ExecStart=/usr/lib/sympa/task_manager.pl
